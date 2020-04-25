@@ -34,7 +34,7 @@ public class ItemDaoMysql implements Dao<Item> {
 	}
 	
 		Item itemFromResultSet(ResultSet resultSet) throws SQLException {
-			Long id = resultSet.getLong("id");
+			Long id = resultSet.getLong("item_id");
 			String itemName = resultSet.getString("item_name");
 			BigDecimal value = resultSet.getBigDecimal("value");
 			return new Item(id, itemName, value);
@@ -60,7 +60,7 @@ public class ItemDaoMysql implements Dao<Item> {
 	public Item readLatest() {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM items ORDER BY id DESC LIMIT 1");) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM items ORDER BY item_id DESC LIMIT 1");) {
 			resultSet.next();
 			return itemFromResultSet(resultSet);
 		} catch (Exception e) {
@@ -86,7 +86,7 @@ public class ItemDaoMysql implements Dao<Item> {
 	public Item readItem(Long id) {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM items where id = " + id);) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM items where item_id = " + id);) {
 			resultSet.next();
 			return itemFromResultSet(resultSet);
 		} catch (Exception e) {
@@ -101,7 +101,7 @@ public class ItemDaoMysql implements Dao<Item> {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
 				Statement statement = connection.createStatement();) {
 			statement.executeUpdate("update items set item_name ='" + item.getItemName() + "', value ='"
-					+ item.getValue() + "' where id =" + item.getId());
+					+ item.getValue() + "' where item_id =" + item.getId());
 			return readItem(item.getId());
 		} catch (Exception e) {
 			LOGGER.debug(e.getStackTrace());
@@ -114,7 +114,7 @@ public class ItemDaoMysql implements Dao<Item> {
 	public void delete(long id) {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
 				Statement statement = connection.createStatement();) {
-			statement.executeUpdate("delete from items where id = " + id);
+			statement.executeUpdate("delete from items where item_id = " + id);
 		} catch (Exception e) {
 			LOGGER.debug(e.getStackTrace());
 			LOGGER.error(e.getMessage());

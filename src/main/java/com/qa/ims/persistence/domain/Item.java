@@ -44,7 +44,7 @@ public class Item {
 	}
 	
 	public String toString() {
-		return "ID: " + id + " || Item Name: " + itemName + " || Item Value: " + value + "Gold";
+		return "ID: " + id + " || Item Name: " + itemName + " || Item Value: " + value + " Gold";
 	}
 
 	@Override

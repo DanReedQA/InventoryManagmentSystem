@@ -28,7 +28,6 @@ public class ItemController implements CrudController<Item> {
 		List<Item> items = itemService.readAll();
 		for(Item item: items) {
 			LOGGER.info(item.toString());
-			LOGGER.info("A list of all current items");
 		}
 		return items;
 	}
@@ -46,7 +45,7 @@ public class ItemController implements CrudController<Item> {
 
 	@Override
 	public Item update() {
-		LOGGER.info("Please enter the id of the item you would like to update");
+		LOGGER.info("Please enter the ID of the item you would like to update");
 		Long id = Long.valueOf(getInput());
 		LOGGER.info("Please enter the new name of the item");
 		String itemName = getInput();
@@ -59,7 +58,7 @@ public class ItemController implements CrudController<Item> {
 
 	@Override
 	public void delete() {
-		LOGGER.info("Please enter the id of the item you would like to delete");
+		LOGGER.info("Please enter the ID of the item you would like to delete");
 		Long id = Long.valueOf(getInput());
 		itemService.delete(id);
 		LOGGER.info("Item Deleted");
