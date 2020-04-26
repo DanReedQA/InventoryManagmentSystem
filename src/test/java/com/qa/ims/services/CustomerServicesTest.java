@@ -20,12 +20,12 @@ public class CustomerServicesTest {
 	@InjectMocks
 	private CustomerServices customerServices;
 	
-	@Test
-	public void customerServicesCreate() {
-		Customer customer = new Customer("chris", "perrins");
-		customerServices.create(customer);
-		Mockito.verify(customerDao, Mockito.times(1)).create(customer);
-	}
+//	@Test
+//	public void customerServicesCreate() {
+//		Customer customer = new Customer("chris", "perrins");
+//		customerServices.create(customer);
+//		Mockito.verify(customerDao, Mockito.times(1)).create(customer);
+//	}
 	
 //	@Test
 //	public void customerServicesRead() {

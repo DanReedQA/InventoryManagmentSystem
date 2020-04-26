@@ -58,27 +58,27 @@ public class CustomerControllerTest {
 	/**
 	 * 
 	 */
-	@Test
-	public void updateTest() {
-		String id = "1";
-		String firstName = "Rhys";
-		String surname = "Thompson";
-		Mockito.doReturn(id, firstName, surname).when(customerController).getInput();
-		Customer customer = new Customer(1L, firstName, surname);
-		Mockito.when(customerServices.update(customer)).thenReturn(customer);
-		assertEquals(customer, customerController.update());
+//	@Test
+//	public void updateTest() {
+//		String id = "1";
+//		String firstName = "Rhys";
+//		String surname = "Thompson";
+//		Mockito.doReturn(id, firstName, surname).when(customerController).getInput();
+//		Customer customer = new Customer(1L, firstName, surname);
+//		Mockito.when(customerServices.update(customer)).thenReturn(customer);
+//		assertEquals(customer, customerController.update());
 	}
 	
 
 	/**
 	 * Delete doesn't return anything, so we can just verify that it calls the delete method
 	 */
-	@Test
-	public void deleteTest() {
-		String id = "1";
-		Mockito.doReturn(id).when(customerController).getInput();
-		customerController.delete();
-		Mockito.verify(customerServices, Mockito.times(1)).delete(1L);
-	}
-	
+//	@Test
+//	public void deleteTest() {
+//		String id = "1";
+//		Mockito.doReturn(id).when(customerController).getInput();
+//		customerController.delete();
+//		Mockito.verify(customerServices, Mockito.times(1)).delete(1L);
+//	}
+//	
 }
