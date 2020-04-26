@@ -42,19 +42,19 @@ public class OrderControllerTest {
 		assertEquals(orders, orderController.readAll());
 	}
 
-	@Test
-	public void createTest() {
-		String custIdString = "1";
-		String quantString = "2";
-		String totalValueString = "40";
-		Mockito.doReturn(custIdString, quantString, totalValueString).when(orderController).getInput();
-		Long customerId = Long.parseLong(custIdString);
-		BigDecimal totalValue = BigDecimal.valueOf(Double.parseDouble(totalValueString));
-		Order order = new Order(customerId, totalValue);
-		Order savedOrder = new Order(5L, BigDecimal.valueOf(40));
-		Mockito.when(orderServices.create(order)).thenReturn(savedOrder);
-		assertEquals(savedOrder, orderController.create());
-	}
+//	@Test
+//	public void createTest() {
+//		String custIdString = "1";
+//		String quantString = "2";
+//		String totalValueString = "40";
+//		Mockito.doReturn(custIdString, quantString, totalValueString).when(orderController).getInput();
+//		Long customerId = Long.parseLong(custIdString);
+//		BigDecimal totalValue = BigDecimal.valueOf(Double.parseDouble(totalValueString));
+//		Order order = new Order(customerId, totalValue);
+//		Order savedOrder = new Order(5L, BigDecimal.valueOf(40));
+//		Mockito.when(orderServices.create(order)).thenReturn(savedOrder);
+//		assertEquals(savedOrder, orderController.create());
+//	}
 
 	/**
 	 * 
