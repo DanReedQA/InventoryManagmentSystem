@@ -36,8 +36,12 @@ public class OrderController implements CrudController<Order> {
 	public Order create() {
 		LOGGER.info("Please enter a CustomerID");
 		Long customerId = Long.valueOf(getInput());
-		LOGGER.info("Please enter the total value");
-		BigDecimal totalValue = BigDecimal.valueOf(Double.parseDouble(getInput()));
+		LOGGER.info("Please enter the value of the item in Gold");
+		BigDecimal itemValue = BigDecimal.valueOf(Double.parseDouble(getInput()));
+		LOGGER.info("Please enter the quantity of the item you wish to purchase");
+		BigDecimal quantity = BigDecimal.valueOf(Double.parseDouble(getInput()));
+		LOGGER.info("Calculating the total cost of your order....");
+		BigDecimal totalValue = (itemValue.multiply(quantity));
 		Order order = orderService.create( new Order(customerId, totalValue));
 		LOGGER.info("Order Created");
 		return order;

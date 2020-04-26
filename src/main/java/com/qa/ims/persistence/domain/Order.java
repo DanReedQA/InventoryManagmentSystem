@@ -6,6 +6,7 @@ public class Order {
 	
 	private Long orderId;
 	private Long customerId;
+	private Long quantity;
 	private BigDecimal totalValue;
 	
 	public Order(Long customerId, BigDecimal totalValue) {
@@ -13,9 +14,16 @@ public class Order {
 		this.totalValue = totalValue;
 	}
 	
-	public Order(Long orderId, Long customerId, BigDecimal totalValue) {
+	public Order(Long customerId, Long quantity, BigDecimal totalValue) {
+		this.customerId = customerId;
+		this.quantity = quantity;
+		this.totalValue = totalValue;
+	}
+	
+	public Order(Long orderId, Long customerId, Long quantity, BigDecimal totalValue) {
 		this.orderId = orderId;
 		this.customerId = customerId;
+		this.quantity = quantity;
 		this.totalValue = totalValue;
 	}
 
@@ -33,6 +41,14 @@ public class Order {
 
 	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
+	}
+
+	public Long getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Long quantity) {
+		this.quantity = quantity;
 	}
 
 	public BigDecimal getTotalValue() {
@@ -53,6 +69,7 @@ public class Order {
 		int result = 1;
 		result = prime * result + ((customerId == null) ? 0 : customerId.hashCode());
 		result = prime * result + ((orderId == null) ? 0 : orderId.hashCode());
+		result = prime * result + ((quantity == null) ? 0 : quantity.hashCode());
 		result = prime * result + ((totalValue == null) ? 0 : totalValue.hashCode());
 		return result;
 	}
@@ -76,6 +93,11 @@ public class Order {
 				return false;
 		} else if (!orderId.equals(other.orderId))
 			return false;
+		if (quantity == null) {
+			if (other.quantity != null)
+				return false;
+		} else if (!quantity.equals(other.quantity))
+			return false;
 		if (totalValue == null) {
 			if (other.totalValue != null)
 				return false;
@@ -83,5 +105,5 @@ public class Order {
 			return false;
 		return true;
 	}
-	
+
 }
