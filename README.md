@@ -1,68 +1,39 @@
-Coverage: 34%
-# Project Title
+Coverage: 44.4%
+## Inventory Managment System - QA Consultancy Individual Project
 
-One Paragraph of project description goes here
+This is an inventory managment system based on a fantacy weapons store. Using JDBC this project is linked to a Google Cloud Platform MySQL instance in which the inventory can be managed using CRUD statments.   
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+1. Clone this repository
+2. Import this as a Maven project into your chosen IDE (Eclipse)
+3. Link the project to your MySQL instance by replacing IP-adresses in the following .java files:
+  
+  - Ims.java
+  (line109)
+  - CustomerDaoMysql.java
+  (line024)
+  - ItemDaoMysql.java
+  (line025)
+  - OrderDaoMysql.java
+  (line025)
+  - OrderlineDaoMysql.java
+  (line024)
+  
+  4. Run the Runner file from your IDE
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+- Java runtime environment
+- IDE (Eclipse)
+- Maven version
+- Git
+- Jenkins
 
-```
-Give examples
-```
+## Testing
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system. Break down into which tests and what they do
-
-### Unit Tests 
-
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
-
-### Integration Tests 
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+Using JUnit and Mockito testing I tested the full functionality of each domain in the database and each of thier CRUD functions
 
 ## Built With
 
@@ -75,6 +46,7 @@ We use [SemVer](http://semver.org/) for versioning.
 ## Authors
 
 * **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* **Dan Reed** - Developer - [DanReedQA](https://github.com/DanReedQA)
 
 ## License
 
@@ -82,12 +54,8 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 *For help in [Choosing a license](https://choosealicense.com/)*
 
-## Acknowledgments
+## Acknowledgements
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* **Nicholas Johnson** - Software Trainer - [nickstewarttds](https://github.com/nickrstewarttds)
+
 # InventoryManagementSystem
-# InventoryManagementSystem
-# InventoryManagementSystem
-# InventoryManagmentSystem
