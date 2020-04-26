@@ -34,12 +34,12 @@ public class ItemController implements CrudController<Item> {
 
 	@Override
 	public Item create() {
-		LOGGER.info("Please enter a product name");
+		LOGGER.info("Please enter the name of a mythical item");
 		String itemName = getInput();
 		LOGGER.info("Please enter the value of the item in gold");
 		BigDecimal value = BigDecimal.valueOf(Double.parseDouble(getInput()));
 		Item item = itemService.create(new Item(itemName, value));
-		LOGGER.info("Item created");
+		LOGGER.info("Item Crafted and Stored");
 		return item;
 	}
 
